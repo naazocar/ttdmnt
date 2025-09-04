@@ -10,8 +10,6 @@ Una API REST completa para gestionar vuelos con MongoDB y TypeScript, desplegada
 - **Docker Compose**: Entorno de desarrollo containerizado
 - **Validación**: Validación de datos con Mongoose
 - **Logging**: Morgan para logs de requests
-- **Seguridad**: Helmet para headers de seguridad
-- **CORS**: Soporte para Cross-Origin Resource Sharing
 
 ## 📋 Estructura del Proyecto
 
@@ -68,16 +66,6 @@ docker-compose up --build
 docker-compose up -d --build
 ```
 
-### 4. Verificar que todo funciona
-
-```bash
-# Health check
-curl http://localhost:3000/health
-
-# Información de la API
-curl http://localhost:3000/
-```
-
 ## 📊 Estructura de Datos
 
 ### Colección Flights
@@ -102,8 +90,6 @@ interface Passenger {
 ```
 
 ## 🔌 Endpoints de la API
-
-### Base URL: `http://localhost:3000`
 
 ### Health Check
 - **GET** `/health` - Verificar estado de la API
@@ -184,8 +170,6 @@ interface Passenger {
 
 **GET** `http://localhost:3000/api/flights`
 
-
-
 ### 3. Actualizar vuelo
 
 **PUT** `http://localhost:3000/api/flights/FL123`
@@ -210,54 +194,6 @@ interface Passenger {
 ### 4. Eliminar vuelo
 
 **DELETE** `http://localhost:3000/api/flights/FL123`
-
-## 🐳 Comandos Docker
-
-```bash
-# Construir y ejecutar
-docker-compose up --build
-
-# Ejecutar en segundo plano
-docker-compose up -d
-
-# Ver logs
-docker-compose logs -f api
-
-# Detener servicios
-docker-compose down
-
-# Detener y eliminar volúmenes
-docker-compose down -v
-
-# Reconstruir sin cache
-docker-compose build --no-cache
-```
-
-## 🔧 Desarrollo Local
-
-### Instalar dependencias
-
-```bash
-npm install
-```
-
-### Ejecutar en modo desarrollo
-
-```bash
-npm run dev
-```
-
-### Compilar TypeScript
-
-```bash
-npm run build
-```
-
-### Ejecutar en producción
-
-```bash
-npm start
-```
 
 ## 📝 Respuestas de la API
 
@@ -287,13 +223,6 @@ La API incluye manejo de errores para:
 - **400**: Datos inválidos o duplicados
 - **404**: Recurso no encontrado
 - **500**: Error interno del servidor
-
-## 🔒 Seguridad
-
-- Headers de seguridad con Helmet
-- Validación de datos con Mongoose
-- Sanitización de inputs
-- Logs de requests con Morgan
 
 ## 📈 Monitoreo
 
